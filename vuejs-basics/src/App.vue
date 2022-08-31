@@ -4,6 +4,9 @@
     <div class="content">
       <p>2 + 2 = {{ 2 + 2 }}</p>
       <p>Print => {{ sayHello() }}</p>
+      <Logged></Logged>
+      <Projects></Projects>
+      <ColorsWall></ColorsWall>
       <Form></Form>
     </div>
     <Footer></Footer>
@@ -13,6 +16,9 @@
 <script>
 import Navbar from "./components/Navbar.vue";
 import Footer from "./components/Footer.vue";
+import Logged from "./components/Logged.vue";
+import Projects from "./components/Projects.vue";
+import ColorsWall from "./components/ColorsWall.vue";
 import Form from "./components/Form.vue";
 
 export default {
@@ -20,6 +26,9 @@ export default {
   components: {
     Navbar,
     Footer,
+    Logged,
+    Projects,
+    ColorsWall,
     Form,
   },
   methods: {
@@ -50,5 +59,21 @@ body {
 .content p {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   margin: 0 20px;
+}
+
+button {
+  margin: 4px;
+  border: none;
+  border-radius: 5px;
+  background-color: rgb(12, 2, 118);
+  color: white;
+  font-size: 15px;
+  padding: 7px 21px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: gray;
 }
 </style>
