@@ -1,6 +1,6 @@
 <template>
   <div class="binding-form">
-    <form action="" method="POST">
+    <form action="" method="POST" @submit.prevent="formButtonPressed">
       <fieldset>
         <legend>This is my form:</legend>
         <input
@@ -60,6 +60,7 @@
         />
         <label class="light" for="vue">Vuejs</label>
       </fieldset>
+      <button type="submit">Submit</button>
     </form>
     <div id="bindings">
       <legend>This is the two-way-data-binding result:</legend>
@@ -88,8 +89,13 @@ export default {
       webLanguaje: "",
       interestInAngular: false,
       interestInReact: false,
-      interestInVue: false
+      interestInVue: false,
     };
+  },
+  methods: {
+    formButtonPressed() {
+      alert("Oops, there was an error connecting to the server 😬");
+    },
   },
   computed: {
     interestsMessage() {
@@ -98,17 +104,15 @@ export default {
         interests += this.$refs.angular.value;
       }
       if (this.interestInReact) {
-        if (interests.length > 0)
-          interests += ", ";
+        if (interests.length > 0) interests += ", ";
         interests += this.$refs.react.value;
       }
       if (this.interestInVue) {
-        if (interests.length > 0)
-          interests += ", ";
+        if (interests.length > 0) interests += ", ";
         interests += this.$refs.vue.value;
       }
       return interests;
-    }
+    },
   },
 };
 </script>
@@ -128,7 +132,8 @@ export default {
   margin: 5px auto;
   padding: 5px 20px;
   background: #f4f7f8;
-  border-radius: 8px;
+  border: 2px solid #ccc;
+  border-radius: 10px;
 }
 
 input[type="text"],
@@ -214,6 +219,10 @@ label.light {
 span {
   color: crimson;
   background-color: rgba(222, 222, 222, 0.3);
+}
+
+button {
+  margin: 5px 0;
 }
 
 @media (max-width: 767px) {
