@@ -82,6 +82,7 @@
 
 <script>
 export default {
+  name: 'Form',
   data() {
     return {
       name: "",
@@ -222,6 +223,8 @@ span {
 }
 
 button {
+  display: block;
+  width: 100%;
   margin: 5px 0;
 }
 

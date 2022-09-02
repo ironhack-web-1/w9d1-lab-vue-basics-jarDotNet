@@ -20,6 +20,7 @@
 
 <script>
 export default {
+  name: 'ColorWall',
   data() {
     return {
       timer: 500,

@@ -104,6 +104,12 @@ With a button submit that submits the form, capture the event, *prevent the defa
 
 ![Form two-way-data-binding](./assets/Form_Animation.gif)
 
+### Iteration 7 | Extra | Explore Parent / Child-Component communication via events
+
+Use Props & events to create a bidirectional comunication between the main App.vue component and some child component.
+
+<br>
+
 Sounds good? Let's get started!
 
 <br>

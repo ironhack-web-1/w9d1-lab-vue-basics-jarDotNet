@@ -23,7 +23,9 @@
 </template>
 
 <script>
-export default {};
+export default {
+  name: 'Navbar',
+};
 </script>
 
 <style scoped>
@@ -39,7 +41,9 @@ export default {};
   padding: 0 20px;
   margin-bottom: 10px;
   background-color: #4d4d4d;
-  position: relative;
+  position: fixed;
+  top: 0;
+  left: 0;
 }
 
 .nav > .nav-header {

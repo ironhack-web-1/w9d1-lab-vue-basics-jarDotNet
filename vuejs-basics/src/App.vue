@@ -1,15 +1,31 @@
 <template>
   <div id="container">
-    <Navbar></Navbar>
+    <Navbar />
     <div class="content">
       <p>2 + 2 = {{ 2 + 2 }}</p>
       <p>Print => {{ sayHello() }}</p>
-      <Logged></Logged>
-      <Projects></Projects>
-      <ColorsWall></ColorsWall>
-      <Form></Form>
+      <Logged />
+      <Projects />
+      <ColorsWall />
+      <Form />
+      <BiDirectionalForm
+        v-model="formValues"
+        :names="[
+          'name',
+          'email',
+          'comments',
+        ]"
+        :hints="[
+          'Please enter your name',
+          'Please enter your email',
+          'Please enter your comments',
+        ]"
+      />
+      <div class="form-results">
+        <p>Child-Form results: <span>{{ formValues }}</span></p>
+      </div>
     </div>
-    <Footer></Footer>
+    <Footer />
   </div>
 </template>
 
@@ -20,9 +36,15 @@ import Logged from "./components/Logged.vue";
 import Projects from "./components/Projects.vue";
 import ColorsWall from "./components/ColorsWall.vue";
 import Form from "./components/Form.vue";
+import BiDirectionalForm from "./components/BiDirectionalForm.vue";
 
 export default {
   name: "App",
+  data() {
+    return {
+      formValues: [],
+    };
+  },
   components: {
     Navbar,
     Footer,
@@ -30,7 +52,8 @@ export default {
     Projects,
     ColorsWall,
     Form,
-  },
+    BiDirectionalForm
+},
   methods: {
     sayHello: function (event) {
       return "Hello World!";
@@ -53,7 +76,8 @@ body {
 }
 
 .content {
-  padding-bottom: 120px;
+  margin-top: 60px;
+  padding-bottom: 140px;
 }
 
 .content p {
@@ -75,5 +99,27 @@ button {
 
 button:hover {
   background-color: gray;
+}
+
+.form-results {
+  font-family: "Segoe UI", "Roboto", sans-serif;
+  max-width: 400px;
+  margin: 5px auto;
+  padding: 5px 20px;
+  background: #9a8c98;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+}
+
+.form-results > p {
+  display: block;
+  margin: 0.2rem 0;
+  padding-bottom: 10px;
+  font-weight: 700;
+}
+
+.form-results span {
+  color: crimson;
+  background-color: rgba(222, 222, 222, 0.3);
 }
 </style>

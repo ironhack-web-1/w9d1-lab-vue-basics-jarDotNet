@@ -28,6 +28,7 @@
     
 <script>
 export default {
+  name: 'Logged',
   data() {
     return {
       userLoggedIn: false,
