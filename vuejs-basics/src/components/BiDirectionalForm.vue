@@ -1,5 +1,5 @@
 <template>
-  <form action="" @submit.prevent="$emit('update:modelValue', inputValues())">
+  <form action="" @submit.prevent="$emit('update:modelValue', geInputValues())">
     <fieldset>
       <legend>Bidirectional form:</legend>
       <label id="name-label"
@@ -60,12 +60,7 @@ export default {
     },
   },
   methods: {
-    inputValues() {
-      alert([
-        this.$refs.name.value,
-        this.$refs.email.value,
-        this.$refs.comments.value
-      ]);
+    geInputValues() {
       return [
         this.$refs.name.value,
         this.$refs.email.value,
