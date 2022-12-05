@@ -96,6 +96,20 @@ We haven't gone very deep into this topic; but here are some tips to point you i
 - You'll need to create either a class or a CSS property and [bind it](https://v1.vuejs.org/guide/syntax.html) to a condition.
 - You'll have to create a method that changes the class or the property and trigger it via a button click. We practiced that in yesterday's lab, so feel free to refer to it if you need any help.
 
+### Iteration 6 | Bonus | Do a form to test two-way-data-binding
+
+Finish the lab of the previous week and do a form (adding some CSS) with similar result to the next one.
+
+With a button submit that submits the form, capture the event, *prevent the default* and show an alert that were an error submitting the form (for example, error connecting to the server).
+
+![Form two-way-data-binding](./assets/Form_Animation.gif)
+
+### Iteration 7 | Extra | Explore Parent / Child-Component communication via events
+
+Use Props & events to create a bidirectional comunication between the main App.vue component and some child component.
+
+<br>
+
 Sounds good? Let's get started!
 
 <br>
